@@ -205,15 +205,16 @@ extension Metadata {
 
         func propertyDescriptions() -> [Property.Description]? {
             let propsAndStp = _propertyDescriptionsAndStartPoint()
-            if let firstInstanceStart = propsAndStp?.1,
-                let firstProperty = propsAndStp?.0.first?.offset {
-                    return propsAndStp?.0.map({ (propertyDesc) -> Property.Description in
-                        let offset = propertyDesc.offset - firstProperty + Int(firstInstanceStart)
-                        return Property.Description(key: propertyDesc.key, type: propertyDesc.type, offset: offset)
-                    })
-            } else {
-                return propsAndStp?.0
-            }
+//            if let firstInstanceStart = propsAndStp?.1,
+//                let firstProperty = propsAndStp?.0.first?.offset {
+//                    return propsAndStp?.0.map({ (propertyDesc) -> Property.Description in
+//                        let offset = propertyDesc.offset - firstProperty + Int(firstInstanceStart)
+//                        return Property.Description(key: propertyDesc.key, type: propertyDesc.type, offset: offset)
+//                    })
+//            } else {
+//                return propsAndStp?.0
+//            }
+            return propsAndStp?.0
         }
     }
 }
